@@ -44,7 +44,7 @@ function Header() {
                         </SignedIn>
 
                         <SignedOut>
-                            <SignInButton>
+                            <SignInButton mode = "modal">
                                 <Button
                                     variant="ghost"
                                     className="bg-gradient-to-r from-blue-600 to-blue-400 text-transparent bg-clip-text">
