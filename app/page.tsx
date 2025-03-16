@@ -1,5 +1,6 @@
 import AgentPulse from "@/components/AgentPulse";
-//import YoutubeVideoForm from "@/components/YoutubeVideoForm";
+import YoutubeVideoForm from "@/components/YoutubeVideoForm";
+
 import {
   Brain,
   Image as ImageIcon,
@@ -8,6 +9,7 @@ import {
   Video,
 } from "lucide-react";
 
+// 3 objects
 const steps = [
   {
     title: "1. Connect Your Content",
@@ -98,7 +100,7 @@ export default function Home() {
               transcription, and insights. Get started in seconds.
             </p>
 
-            {/* <YoutubeVideoForm /> */}
+            <YoutubeVideoForm />
           </div>
         </div>
       </section>
