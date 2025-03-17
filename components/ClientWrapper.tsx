@@ -1,7 +1,9 @@
 "use client";
 
 import { ClerkProvider } from "@clerk/nextjs";
+import { dark, neobrutalism, shadesOfPurple } from '@clerk/themes'
 import { SchematicProvider } from "@schematichq/schematic-react";
+import SchematicWrapped from "./SchematicWrapped";
 // import SchematicWrapped from "./SchematicWrapped";
 // import { ConvexClientProvider } from "./ConvexClientProvider";
 
@@ -11,16 +13,28 @@ export default function ClientWrapper({
 }: Readonly<{
     children: React.ReactNode;
 }>) {
-    const schematicPubKey = process.env.NEXT_PUBLIC_SCHEMATIC_PUBLISHABLE_KEY;
+
+    const schematicPubKey = process.env.SCHEMATIC_PUBLISHABLE_KEY;
+
     if (!schematicPubKey) {
         throw new Error(
             "No Schematic Publishable Key found. Please add it to your .env.local file."
         );
     }
+
     return (
-        <ClerkProvider>
+        <ClerkProvider
+            appearance={{
+                baseTheme: [dark],
+               // variables: { colorPrimary: 'blue' },
+                signIn: {
+                //    baseTheme: [shadesOfPurple],
+                 //   variables: { colorPrimary: 'blue' },
+                },
+            }}
+        >
             <SchematicProvider publishableKey={schematicPubKey}>
-                {children}
+                <SchematicWrapped> {children}</SchematicWrapped>
             </SchematicProvider>
         </ClerkProvider>
     );
