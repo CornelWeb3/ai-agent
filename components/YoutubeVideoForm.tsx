@@ -5,9 +5,9 @@ import { analyseYoutubeVideo } from "@/actions/analyseYoutubeVideo";
 function YouTubeVideoForm() {
     return (
         <div className="w-full max-w-2xl mx-auto">
-            <Form 
-            action = {analyseYoutubeVideo}
-            className="flex flex-col sm:flex-row gap-2 items-center">
+            <Form
+                action={analyseYoutubeVideo}
+                className="flex flex-col sm:flex-row gap-2 items-center">
                 <input
                     name="url"
                     type="text"
