@@ -1,7 +1,7 @@
 "use client";
 
 import { ClerkProvider } from "@clerk/nextjs";
-import { dark, neobrutalism, shadesOfPurple } from '@clerk/themes'
+import { dark } from '@clerk/themes'
 import { SchematicProvider } from "@schematichq/schematic-react";
 import SchematicWrapped from "./SchematicWrapped";
 // import SchematicWrapped from "./SchematicWrapped";
@@ -14,7 +14,7 @@ export default function ClientWrapper({
     children: React.ReactNode;
 }>) {
 
-    const schematicPubKey = process.env.SCHEMATIC_PUBLISHABLE_KEY;
+    const schematicPubKey = process.env.NEXT_PUBLIC_SCHEMATIC_PUBLISHABLE_KEY;
 
     if (!schematicPubKey) {
         throw new Error(
@@ -26,10 +26,10 @@ export default function ClientWrapper({
         <ClerkProvider
             appearance={{
                 baseTheme: [dark],
-               // variables: { colorPrimary: 'blue' },
+                // variables: { colorPrimary: 'blue' },
                 signIn: {
-                //    baseTheme: [shadesOfPurple],
-                 //   variables: { colorPrimary: 'blue' },
+                    //    baseTheme: [shadesOfPurple],
+                    //   variables: { colorPrimary: 'blue' },
                 },
             }}
         >
