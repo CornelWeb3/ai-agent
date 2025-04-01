@@ -33,7 +33,7 @@ export default function ClientWrapper({
                 },
             }}
         >
-            <SchematicProvider publishableKey={schematicPubKey}>
+            <SchematicProvider publishableKey={schematicPubKey} debug={true}>
                 <SchematicWrapped> {children}</SchematicWrapped>
             </SchematicProvider>
         </ClerkProvider>

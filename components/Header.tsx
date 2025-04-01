@@ -8,7 +8,7 @@ import { Button } from "./ui/button";
 /**
  * A sticky header that appears at the top of every page.
  *
- * Consists of a container with a blue AgentTube logo on the left and
+ * Consists of a container with a blue VidAgent  logo on the left and
  * an empty right side for future development.
  *
  * @returns {JSX.Element} A sticky header element.
@@ -24,7 +24,7 @@ function Header() {
                         <Link href="/" className="flex items-center gap-4">
                             <AgentPulse size="small" color="blue" />
                             <h1 className="text-xl font-semibold bg-gradient-to-r from-blue-600 to-blue-400 bg-clip-text text-transparent">
-                                AgentTube
+                                VidAgent
                             </h1>
                         </Link>
                     </div>
@@ -44,7 +44,7 @@ function Header() {
                         </SignedIn>
 
                         <SignedOut>
-                            <SignInButton mode = "modal">
+                            <SignInButton mode="modal">
                                 <Button
                                     variant="ghost"
                                     className="bg-gradient-to-r from-blue-600 to-blue-400 text-transparent bg-clip-text">
