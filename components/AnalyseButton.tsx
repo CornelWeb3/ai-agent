@@ -17,8 +17,8 @@ function AnalyseButton() {
 
             {pending ? "Analysing..." : "Analyze"}
         </button>
-        
-            );
+
+    );
 }
 
 export default AnalyseButton

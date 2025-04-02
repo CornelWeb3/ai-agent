@@ -15,19 +15,23 @@ function Usage({
     const isPending = useSchematicIsPending();
 
     // loading state
-    if (isPending) {
-        //     return <Loader />;
-        "Loader";
-    }
+    // if (isPending) {
+    //     //     return <Loader />;
+    //    return "Loader";
+    // }
 
     const {
         featureAllocation,  // 5 transcription / month
         featureUsage,      // how much used
-        featureUsageExceeded,
         value: isFeatureEnabled,
     } = useSchematicEntitlement(featureFlag);  // feature flag si transcription
+    // /        featureUsageExceeded, parameter can be added
 
-  //  console.log(featureAllocation, featureUsage);
+    //  console.log(featureAllocation, featureUsage);
+
+    if (isPending) {
+        return <div className="text-gray-500 text-center py-4">Loading...</div>;
+    }
 
     const hasUsedAllToken = featureUsage && featureAllocation && featureUsage >= featureAllocation;
 
@@ -64,7 +68,7 @@ function Usage({
 
     // simplify below
     // either feature state or "no access" state
-             //  return isFeatureEnabled ? <Feature /> : <NoAccess />;
+    //  return isFeatureEnabled ? <Feature /> : <NoAccess />;
 
     if (!isFeatureEnabled) {
         return (

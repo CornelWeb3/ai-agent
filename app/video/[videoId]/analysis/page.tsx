@@ -1,12 +1,13 @@
 'use client';
 
 import Usage from "@/components/Usage";
+import YouTubeVideoDetails from "@/components/YouTubeVideoDetails";
 import { FeatureFlag } from "@/features/flags";
 import { useParams } from "next/navigation";
 
 function AnalysisPage() {
     const params = useParams<{ videoId: string }>();
-    const videoId = { params };
+    const { videoId } = params;
 
     return (
         <div className="container mx-auto px-4 md:px-0">
@@ -22,7 +23,7 @@ function AnalysisPage() {
 
 
                     {/* Video transcription status */}
-                    {/* <YouTubeVideoDetails videoId={videoId} /> */}
+                    <YouTubeVideoDetails videoId={videoId} />
 
                     {/* You tube video details  */}
                     {/* Thumbnail generation */}
