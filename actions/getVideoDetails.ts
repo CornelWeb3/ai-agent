@@ -8,7 +8,7 @@ const youtube = google.youtube({
     auth: process.env.YOUTUBE_API_KEY,  // without NEXT_PUBLIC is available only on server not client. Keep things secure
 });
 
-export async function getVideoDetails(videoId: string): Promise<VideoDetails> {
+export async function getVideoDetails(videoId: string) {
     console.log("Video id is: ", videoId);
 
     try {
