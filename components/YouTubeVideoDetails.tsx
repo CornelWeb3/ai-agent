@@ -5,7 +5,7 @@ import { VideoDetails } from "./types/types";
 import { getVideoDetails } from "@/actions/getVideoDetails";
 import { Calendar, Eye, MessageCircle, ThumbsUp } from "lucide-react";
 
-function YouTubeVideoDetails({ videoId }: { videoId: string }) {
+function YouTubeVideoDetails({ videoId }: Readonly<{ videoId: string }>) {
 
   const [video, setVideo] = useState<VideoDetails | null>(null);
   const [error, setError] = useState<string | null>(null);

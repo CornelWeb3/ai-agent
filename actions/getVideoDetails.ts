@@ -25,7 +25,7 @@ export async function getVideoDetails(videoId: string) {
 
         const channelResponse = await youtube.channels.list({
             part: ["statistics", "snippet"],
-            id: [videoDetails.snippet?.channelId || ""],
+            id: [videoDetails.snippet?.channelId ?? ""],
             key: process.env.YOUTUBE_API_KEY,
         });
 
@@ -37,24 +37,24 @@ export async function getVideoDetails(videoId: string) {
 
         const video: VideoDetails = {
             //Video info
-            title: videoDetails.snippet?.title || "Unknown title",
+            title: videoDetails.snippet?.title ?? "Unknown title",
             thumbnail:
-                videoDetails.snippet?.thumbnails?.maxres?.url ||
-                videoDetails.snippet?.thumbnails?.high?.url ||
-                videoDetails.snippet?.thumbnails?.default?.url ||
+                videoDetails.snippet?.thumbnails?.maxres?.url ??
+                videoDetails.snippet?.thumbnails?.high?.url ??
+                videoDetails.snippet?.thumbnails?.default?.url ??
                 "",
-            publishedAt: videoDetails.snippet?.publishedAt || new Date().toDateString(),
+            publishedAt: videoDetails.snippet?.publishedAt ?? new Date().toDateString(),
 
             // Video stats
-            views: videoDetails.statistics?.viewCount || "0",
-            likes: videoDetails.statistics?.likeCount || "Not available",
-            comments: videoDetails.statistics?.commentCount || "Not available",
+            views: videoDetails.statistics?.viewCount ?? "0",
+            likes: videoDetails.statistics?.likeCount ?? "Not available",
+            comments: videoDetails.statistics?.commentCount ?? "Not available",
 
             // Channel info
             channel: {
-                title: videoDetails.snippet?.channelTitle || "Unknown channel",
-                thumbnail: channelDetails.snippet?.thumbnails?.default?.url || "",
-                subscribers: channelDetails.statistics?.subscriberCount || "0",
+                title: videoDetails.snippet?.channelTitle ?? "Unknown channel",
+                thumbnail: channelDetails.snippet?.thumbnails?.default?.url ?? "",
+                subscribers: channelDetails.statistics?.subscriberCount ?? "0",
             },
         };
         return video;
