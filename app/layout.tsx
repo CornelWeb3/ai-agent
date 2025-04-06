@@ -23,20 +23,6 @@ export const metadata: Metadata = {
   icons: {
     icon: "ref",
   },
-  // openGraph: {
-  //   type: "website",
-  //   locale: "en_US",
-  //   url: "https://vidagent.com",
-  //   siteName: "VidAgent",
-  //   images: [
-  //     {
-  //       url: "https://vidagent.com/og.png",
-  //       width: 800,
-  //       height: 600,
-  //       alt: "VidAgent",
-  //     },
-  //   ],
-  // },
 };
 
 export default function RootLayout({
