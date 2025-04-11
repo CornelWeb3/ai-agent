@@ -30,17 +30,21 @@ function YouTubeVideoDetails({ videoId }: Readonly<{ videoId: string }>) {
     return <div>Error: {error}</div>;
   }
 
-  if (!video) {
-    return <div>Video not found</div>;
-  }
-
-
   // @container to parent so child elements can be responsive when add @md
+
+  if (!video) {
+    return (
+      <div className="flex justify-center items-center p-4">
+        <div className="border-4 animate-spin rounded-full h-8 w-8 border-t-blue-500 border-gray-300">
+        </div>
+      </div>
+    );
+  };
 
   return (
     <div className="@container bg-white rounded-xl">
       <div className="flex flex-col gap-8">
-        
+
         {/* Video Thumbnail */}
         <div className="flex-shrink-0">
           <img

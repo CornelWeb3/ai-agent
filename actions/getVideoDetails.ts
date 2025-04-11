@@ -9,7 +9,7 @@ const youtube = google.youtube({
 });
 
 export async function getVideoDetails(videoId: string) {
-    console.log("Video id is: ", videoId);
+    // console.log("Video id is: ", videoId);
 
     try {
         const videoResponse = await youtube.videos.list({

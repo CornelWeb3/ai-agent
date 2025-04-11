@@ -7,10 +7,10 @@ import { useSchematicIsPending, useSchematicEntitlement } from "@schematichq/sch
 function Usage({
     featureFlag,
     title
-}: {
+}: Readonly<{
     featureFlag: FeatureFlag,
     title: string;
-}) {
+}>) {
 
     const isPending = useSchematicIsPending();
 
@@ -27,7 +27,7 @@ function Usage({
     } = useSchematicEntitlement(featureFlag);  // feature flag si transcription
     // /        featureUsageExceeded, parameter can be added
 
-    //  console.log(featureAllocation, featureUsage);
+    //console.log(featureAllocation, featureUsage);
 
     if (isPending) {
         return <div className="text-gray-500 text-center py-4">Loading...</div>;
