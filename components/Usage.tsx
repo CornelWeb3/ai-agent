@@ -3,6 +3,7 @@
 import { FeatureFlag } from "../features/flags";
 import { Progress } from "@radix-ui/react-progress";
 import { useSchematicIsPending, useSchematicEntitlement } from "@schematichq/schematic-react";
+import { JSX } from "react";
 
 function Usage({
     featureFlag,
@@ -13,7 +14,7 @@ function Usage({
 }>) {
 
     const isPending = useSchematicIsPending();
-
+    let usageMessage: JSX.Element | null = null;
     // loading state
     // if (isPending) {
     //     //     return <Loader />;
@@ -105,6 +106,17 @@ function Usage({
 
     const progressColor = getProgressColor(progress);
 
+    if (progress >= 100) {
+        usageMessage = (<p className="text-sm text-red-600 mt-2">
+            You have used all your tokens for this feature. Please upgrade your plan to continue using this feature.
+        </p>);
+    } else if (progress >= 80) {
+        usageMessage = (<p className="text-sm text-red-600 mt-2">
+            Warning! You are approaching your usage limit.
+        </p>
+        );
+    }
+
     return (
         <div>
             <div className="flex justify-between items-center mb-4 gap-4">
@@ -122,16 +134,7 @@ function Usage({
                     value={progress}
                     className={`h-3 rounded-full bg-gray-100 ${progressColor}`}
                 />
-
-                {progress >= 100 ? (
-                    <p className="text-sm text-red-600 mt-2">
-                        You have used all your tokens for this feature. Please upgrade your plan to continue using this feature.
-                    </p>
-                ) : progress >= 80 ? (
-                    <p className="text-sm text-red-600 mt-2">
-                        Warning! You are approaching your usage limit.
-                    </p>
-                ) : null}
+                {usageMessage}
                 <div />
             </div>
             <div />
