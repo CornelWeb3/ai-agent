@@ -6,11 +6,20 @@ const nextConfig: NextConfig = {
             {
                 protocol: "https",
                 hostname: "i.ytimg.com",
-            }, 
+            },
             {
                 protocol: "https",
                 hostname: "yt3.ggpht.com",
             },
+            {
+                protocol: "https",
+                hostname: "sl.bing.net"
+            },
+            {
+                protocol: "https",
+                hostname: "images.app.goo.gl"
+            }
+
         ],
     },
 };

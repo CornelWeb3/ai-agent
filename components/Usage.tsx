@@ -96,7 +96,7 @@ function Usage({
         );
     }
 
-    const progress = ((featureUsage || 0) / (featureAllocation || 1) * 100);
+    const progress = ((featureUsage ?? 0) / (featureAllocation ?? 1) * 100);
 
     const getProgressColor = (percent: number) => {
         if (percent >= 80) return "[&>*]:bg-red-600";

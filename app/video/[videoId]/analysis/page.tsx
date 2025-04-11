@@ -26,10 +26,12 @@ function AnalysisPage() {
                     {/* Video transcription status */}
                     <YouTubeVideoDetails videoId={videoId} />
 
-                     {/* Thumbnail generation */}
-                     <ThumbnailGeneration videoId={videoId} />
-                
+                    {/* Thumbnail generation */}
+                    <ThumbnailGeneration videoId={videoId} />
+
                     {/* Title generation */}
+
+                    
                     {/* Transcription */}
                 </div>
 
