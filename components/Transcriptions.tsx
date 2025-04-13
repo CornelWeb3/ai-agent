@@ -17,7 +17,7 @@ function Transcriptions({ videoId }: Readonly<{ videoId: string }>) {
         cache: string;
     } | null>(null);
 
-    const { featureUsageExceed } = useSchematicEntitlement(
+    const { featureUsageExceeded } = useSchematicEntitlement(
         FeatureFlag.TRANSCRIPTION
     );
 
@@ -28,7 +28,7 @@ function Transcriptions({ videoId }: Readonly<{ videoId: string }>) {
                 title="Transcription"
             />
             {/* Transcription */}
-            {!featureUsageExceed ? (
+            {!featureUsageExceeded ? (
                 <div className="flex flex-col gap-4max-h-[250px] overflow-y-auto roudned-md p-4">
                     {transcript ? (
                         transcript.transcript.map((entry, index) => (

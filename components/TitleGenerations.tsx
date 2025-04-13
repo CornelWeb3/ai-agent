@@ -6,16 +6,16 @@ import { FeatureFlag } from "@/features/flags";
 import { useSchematicEntitlement } from "@schematichq/schematic-react";
 import { Copy } from "lucide-react";
 
-function TitleGenerations({ videoId }: { videoId: string }) {
+function TitleGenerations({ videoId }: Readonly<{ videoId: string }>) {
   const user = useUser();
-  const titles = []; // pull from convex db
+  const titles = [{ 'id': 1, 'title': 'My title' }]; // pull from convex db
 
   const { value: isTitleGenerationEnabled } = useSchematicEntitlement(
     FeatureFlag.TITLE_GENERATION
   );
 
   const copyToClipboard = (text: string) => {
-     navigator.clipboard.writeText(text);  // navigator build in API
+    navigator.clipboard.writeText(text);  // navigator build in API
   };
 
 
