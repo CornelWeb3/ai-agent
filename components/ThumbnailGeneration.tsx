@@ -8,7 +8,8 @@ import Image from "next/image";
 function ThumbnailGeneration({ videoId }: Readonly<{ videoId: string }>) {
     const { user } = useUser();
 
-    const images = [{ 'id': 1, 'url': 'https://sl.bing.net/iq3tNiF4jka' }}]; // Pull from convex DB
+    const images = [{ 'id': 1, 'url': 'https://sl.bing.net/iq3tNiF4jka' }]; // Pull from convex DB
+
     // const images = [
     //     { id: 1, url: "https://sl.bing.net/iq3tNiF4jka" },
     //     { id: 2, url: "https://images.app.goo.gl/6X4n9UhvLRAZhWBp7" },
